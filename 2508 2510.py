@@ -46,21 +46,21 @@ print(s.size())
 
 
 q=True
-wf=input('뭐 먹을래? 감자 보리 밀 쌀      ')
-if wf=='감자' :
+food=input('뭐 먹을래? 감자 보리 밀 쌀      ')
+if food=='감자' :
     f=292
-elif wf=='보리' :
+elif food=='보리' :
     f=176
-elif wf=='밀' :
+elif food=='밀' :
     f=248
-elif wf=='쌀' :
+elif food=='쌀' :
     f=264
-elif wf=='채소' :
+elif food=='채소' :
     f=2
-elif wf=='빵' :
+elif food=='빵' :
     print('빵이 없으면 캐이크를 먹어')
     q=False
-elif wf=='인공 음식' :
+elif food=='인공 음식' :
     f=10000000
 else :
     print('그런 거 없다 반동분자야')
@@ -96,7 +96,7 @@ while q :
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
-            print(wf, end='')
+            print(food, end='')
             print('농사가 망했습니다 you die')
             at.append(a)
             q=False
@@ -105,7 +105,7 @@ while q :
             print('서기', end='')
             print(y, end='')
             print('년', end=' ')
-            print(wf, end='')
+            print(food, end='')
             print('수확량이 부족합니다 폭동이 일어났습니다 you die')
             q=False
             break
