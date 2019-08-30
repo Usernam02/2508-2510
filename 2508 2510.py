@@ -1,53 +1,5 @@
-
-class Queue :
-    def __init__(self) :
-        self.items = []
-    def enqueue(self,item) :
-        self.items.insert(0,item) 
-    def dequeue(self) :
-        return self.items.pop()
-    def isEmpty(self) :
-        return self.items == []
-    def size(self) :
-        return len(self.items)
-g = Queue()
-k = Queue()
-b = Queue()
-s = Queue()
-for i in range(0,100):
-    g.enqueue(1)
-    k.enqueue(1)
-    b.enqueue(1)
-    s.enqueue(1)
-a1 = g.size() // 3
-a2 = k.size() // 4
-a3 = b.size() // 2
-a4 = s.size() // 5
-for i in range(a1) :
-    g.dequeue()
-for i in range(a2) :
-    k.dequeue()
-for i in range(a3) :
-    b.dequeue()
-for i in range(a4) :
-    s.dequeue()
-for i in range(a2) :
-    g.enqueue(1)
-for i in range(a3) :
-    k.enqueue(1)
-for i in range(a4) :
-    b.enqueue(1)
-for i in range(a1) :
-    s.enqueue(1)
-print(g.size())
-print(k.size())
-print(b.size())
-print(s.size())
-
-
-
 q=True                                       #f= 수확량
-wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
+wf=input('뭐 먹을래? 감자 보리 밀 쌀 빵 인공 음식     ')
 if wf=='감자' :
     f=292
 elif wf=='보리' :
@@ -116,6 +68,13 @@ while q :
             print('년', end=' ')
             print('화석 연료가 다 떨어졌습니다 가장 현실에 가깝습니다 you die')
             gt.append(g)
+            q=False
+            break
+        elif g >30000 :
+            print ('서기', end='')
+            print(y, end='')
+            print('년', end='')
+            print('화석 연료가 너무 많습니다 화석연료를 얻기 위해 너무 많은 땅을 갈아 엎었습니다. 살아갈 땅이 없습니다. you die')
             q=False
             break
         elif a>30000:               #이산화탄소 농도가 너무 높으면 질식사합니다
