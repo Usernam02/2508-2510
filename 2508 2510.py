@@ -1,4 +1,4 @@
-class Queue :
+class Queue :   # Queue 정의
     def __init__(self) :
         self.items = []
     def enqueue(self,item) :
@@ -49,7 +49,7 @@ print(s.size())
 
 #q값에 따라 인류의 미래가 결정됨
 q=True                                       #f= 수확량
-wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
+wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식  콩   ')   # 무슨 음식을 먹을지 설정하는 코드 : 감자 보리 밀 쌀 인공 음식 콩
 if wf=='감자' :
     f=292
 elif wf=='보리' :
@@ -65,8 +65,13 @@ elif wf=='빵' :
     q=False
 elif wf=='인공 음식' :
     f=10000000
+elif wf=='콩':
+    f=1000
+elif wf=='지구에는 먹을게 없어' :  #hidden ending : 살아남을 수 있는 단 하나의 코드
+    print('당신은 지구에 식량난이 오기 전에 지구 탈출을 계획하여 탈출에 성공했습니다. 이제부터 우주를 개척하시면서 살아가면 됩니다. you alive')
+    q=False    
 else :
-    print('그런 거 없다 반동분자야')
+    print('그런 거 없다 반동분자야')   # 위 리스트에 없는 음식을 입력했을 경우
     q=False
 a=10000
 g=10000
