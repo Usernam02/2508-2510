@@ -47,30 +47,30 @@ print(b.size())
 print(s.size())
 
 
-#q값에 따라 인류의 미래가 결정됨
+#q값에 따라 인류의 미래가 결정됨. q값을 최대한 오래 높이는 것이 핵심이다.
 q=True                                       #f= 수확량
-wf=input('뭐 먹을래? 감자 보리 밀 쌀 인공 음식     ')
-if wf=='감자' :
-    f=292
-elif wf=='보리' :
-    f=176
+wf=input('뭐 먹을래? 감자 보리 밀 옥수수 쌀 콩     ')
+if wf=='감자' :#임의로 결정한 수치를 실제 작물들의 수확량에 맞춰서 현실적으로 재보정.
+    f=92
+elif wf=='옥수수' :
+    f=75
 elif wf=='밀' :
-    f=248
+    f=30
+elif wf=='고구마' :
+    f=88
 elif wf=='쌀' :
-    f=264
-elif wf=='채소' :
-    f=2
-elif wf=='빵' :
-    print('빵이 없으면 캐이크를 먹어-말이 안통하네트')
-    q=False
-elif wf=='인공 음식' :
-    f=10000000
+    f=74
+elif wf=='보리' :
+    f=62
+elif wf=='콩' :
+    f=280
 else :
     print('그런 거 없다 반동분자야')
     q=False
-a=10000
-g=10000
+a=10000 #이산화탄소량
+g=10000  #화석연료량
 h=70
+k=10
 at=[]
 gt=[]
 wt=[]
@@ -91,7 +91,7 @@ while q :
         bh2=int(bh*0.1)
         f1=int(f*0.1)
         a=a+w-nw+h+bh2-f1            #1년 후 이산화탄소의 양
-        g=g-bh+f-h                   #1년 후 화석 연료의 양
+        g=g-bh+f-h+k               #1년 후 화석 연료의 양
         w=nw
         dh=int(0.08*h)
         nh=int(0.02*bh)
@@ -128,15 +128,12 @@ while q :
             at.append(a)
             q=False
             break
-        elif f-h>500 :             #수확량이 인구에 비해 너무 많으면 넘쳐나는 음식물 쓰레기를 주체할 수 없게 됩니다.
-            print('서기', end='')
-            print(y, end='')
-            print('년', end=' ')
-            print('음식물 쓰레기가 너무 많습니다 you die')
-            q=False
+            #음식물 쓰레기 부분은 비현실적이어서 제거.
             break
         else :
             h=h-dh+nh
+        if y>2050:
+            k= k+ 0.1*(f-h)#2050년을 넘기면 식량의 10%를 바이오매스로 쓸 수 있게 지속성을 보장.
     import matplotlib.pyplot as plt
     plt.figure(figsize = (5,3), dpi = 300) # 그래프 크기 및 해상도 조절
 
